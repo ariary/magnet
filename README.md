@@ -24,3 +24,9 @@ Cookie
 ## Mac OS
 les fichiers intéresssat style password safari dans "keychain":
 ~/Library/Keychains, /Library/Keychains/ and /Network/Library/Keychains/
+
+
+1. Qqchose qui se compile en focntion de l'OS + en fonction de l'endpoint de c2
+Faire un makefile en conséquence, 
+2. chaque os a sa liste
+3. binaire self-remove
