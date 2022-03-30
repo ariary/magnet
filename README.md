@@ -1,4 +1,4 @@
-# BrowserCredentialMagnet
+# Magnet
 🧲 Grab credential and cookie from browser files (Chrome, and firefox)
 
 
@@ -20,3 +20,7 @@ https://medium.com/geekculture/how-to-hack-firefox-passwords-with-python-a394abf
 need to load specific library
 
 Cookie
+
+## Mac OS
+les fichiers intéresssat style password safari dans "keychain":
+~/Library/Keychains, /Library/Keychains/ and /Network/Library/Keychains/
