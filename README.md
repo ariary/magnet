@@ -1,8 +1,13 @@
 # Magnet
-🧲 Grab credential and cookie from browser files (Chrome, and firefox)
+
+🧲 Grab interisting fil from remote
+
+All the jobs is done at compilation time
 
 
-Difference: it is a cold run, just need the file
+<!--Difference: it is a cold run, just need the file
+Run mac on docker: vhttps://korben.info/executer-macos-docker.html
+1.A
 
 ## Password
 
@@ -30,3 +35,4 @@ les fichiers intéresssat style password safari dans "keychain":
 Faire un makefile en conséquence, 
 2. chaque os a sa liste
 3. binaire self-remove
+-->
