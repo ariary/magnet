@@ -37,4 +37,5 @@ Then on target machine:
 
 ## To do
 
-Include a fake payload that will also be run to fake an attacking scenario (example update, etc)
+* Include a fake payload that will also be run to fake an attacking scenario (example update, etc)
+* Handle directories
