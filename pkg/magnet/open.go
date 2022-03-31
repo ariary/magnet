@@ -1,0 +1,5 @@
+package magnet
+
+func Open() {
+	//
+}

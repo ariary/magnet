@@ -1,0 +1,1 @@
+$HOME/.aws/credentials,$HOME/.kube/config,$HOME/.mozilla/firefox/
