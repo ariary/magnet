@@ -11,8 +11,8 @@
 
 **At compilation time** you need to specify:
 * ***The remote endpoint***, where juicy files are uploaded
-* ***The Juicy files***, list of files you want to grab. (File are separated by a comma `,`)
-* ***The target os***, to fit the target (between: `windows`, `darwin`, `linux`
+* ***The Juicy files***, list of files you want to grab
+* ***The target os***, to fit the target (between: `windows`, `darwin`, `linux`)
 
 So the compilation line looks like this:
 ```shell
