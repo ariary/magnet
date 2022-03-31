@@ -8,7 +8,9 @@ import (
 	"mime/multipart"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
+	"time"
 )
 
 var FileList string
@@ -28,7 +30,7 @@ func main() {
 	flag.Parse()
 
 	//unflat file list
-	sFileList := strings.Split(FileList, ",")
+	sFileList := strings.Split(FileList, "\n")
 
 	if debug {
 		fmt.Println("files:")
@@ -44,6 +46,7 @@ func main() {
 	for i := 0; i < len(sFileList); i++ {
 		err := SendFile(client, Endpoint, sFileList[i])
 		if err != nil && debug {
+			fmt.Println(sFileList[i])
 			fmt.Println("error:", err)
 		}
 	}
@@ -82,7 +85,8 @@ func Upload(client *http.Client, url string, values map[string]io.Reader) (err e
 		}
 		// Add an image file
 		if x, ok := r.(*os.File); ok {
-			if fw, err = w.CreateFormFile(key, x.Name()); err != nil {
+
+			if fw, err = w.CreateFormFile(key, x.Name()+"-"+strconv.Itoa(time.Now().Nanosecond())); err != nil { //weird name to avoid collision
 				return err
 			}
 		} else {

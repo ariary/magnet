@@ -1,0 +1,4 @@
+$USERPROFILE\AppData\Local\Google\Chrome\User Data\Local State
+$USERPROFILE\AppData\Local\Google\Chrome\User Data\Default\Login Data
+$USERPROFILE\.aws\config
+$USERPROFILE\.aws\credentials
