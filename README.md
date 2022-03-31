@@ -1,6 +1,5 @@
-# Magnet
-
 <div align=center>
+  <h1>magnet</h1>
   <pre>🧲⚡
   <strong>Grab interesting files from remote</strong><br>
   All the job is done at compilation time</pre>
