@@ -3,7 +3,7 @@
 <div align=center>
   <pre>🧲⚡
   <strong>Grab interesting files from remote</strong><br>
-  All the jobs is done at compilation time</pre>
+  All the job is done at compilation time</pre>
 </div>
 
 
