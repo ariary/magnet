@@ -1,9 +1,9 @@
 # Magnet
 
 <div align=center>
-  <code><pre>🧲⚡
+  <pre>🧲⚡
   <strong>Grab interesting files from remote</strong><br>
-  All the jobs is done at compilation time</pre></code>
+  All the jobs is done at compilation time</pre>
 </div>
 
 
