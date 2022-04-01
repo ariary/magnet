@@ -27,13 +27,20 @@ Then on target machine:
 ./magnet #or magnet.exe
 ```
 
+### Shortcut
+
+To build `magnet` binary in one step:
+```shell
+make build.magnet $FILE $ENDPOINT
+```
+
 ### Obfuscation/Encryption
 
 As you can see, it uses <code>linux_juicy_files_<b>obfuscated.txt</b></code>. To avoid detection system, as we are seeking for sensitive files, **the different files we want to grab must not be in clear text within the binary** . Hence it used basic encryption with the key to decrypt embedded in binary. *(The aim is only to avoid AV and Detection system not to have strong encryption scheme)*
 
 To build the obfuscated list:
 ```shell
-./list_obfuscator $KEY [FILE]
+cat [FILE] | lobfuscator $KEY > obfuscated.txt
 ```
 
 ### Notes
