@@ -29,7 +29,7 @@ Then on target machine:
 
 ### Obfuscation/Encryption
 
-As you can see, it uses <code>linux_juicy_files_<b>obfuscated.txt</b></code>. To avoid detection system, as we are seeking for senssitive files, **the different files we want to grab must not be in clear text within the binary** . Hence it used basic basic encryption with the key to decrypt embedded in binary. *(The aim is only to avoid AV and Detection system not to have strong encryption scheme)*
+As you can see, it uses <code>linux_juicy_files_<b>obfuscated.txt</b></code>. To avoid detection system, as we are seeking for sensitive files, **the different files we want to grab must not be in clear text within the binary** . Hence it used basic basic encryption with the key to decrypt embedded in binary. *(The aim is only to avoid AV and Detection system not to have strong encryption scheme)*
 
 To build the obfuscated list:
 ```shell
