@@ -21,7 +21,7 @@
 To build `magnet` binary in one step:
 ```shell
 make build.magnet.linux $FILE $ENDPOINT
-# or build.magnet.windows and build.magnet.darwin
+# or build.magnet.windows or build.magnet.darwin
 ```
 
 Then on target machine:
