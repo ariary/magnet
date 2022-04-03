@@ -4,13 +4,13 @@
   <strong>Grab interesting files from remote</strong><br>
   The library is built to fetch predefined files of interest from a target devices. It assumes that an HTTP endpoint is listening when the program wise launched.
 
-  <b><i>Cross-platform</i><b>
-  <b><i>Stealth</i><b>
-  <b><i>Portable</i><b>
+  <b><i>Cross-platform</i></b>
+  <b><i>Stealth</i></b>
+  <b><i>Portable</i></b>
   </pre>
 </div>
 
-
+*For educational purpose only or with prealable permission*
 
 ## Usage
 
