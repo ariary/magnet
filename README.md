@@ -1,8 +1,8 @@
 <div align=center>
   <h1>magnet</h1>
   <pre>🧲⚡
-  <strong>Grab interesting files from remote</strong><br>
-  The library is built to fetch predefined files of interest from a target devices. It assumes that an HTTP endpoint is listening when the program wise launched.
+  <strong>Grab interesting files from target</strong><br>
+  The library is built to fetch predefined files of interest from a remote device. It assumes that an HTTP endpoint is listening when the program wise launched.
 
   <b><i>Cross-platform</i></b>
   <b><i>Stealth</i></b>
