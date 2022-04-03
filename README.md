@@ -9,7 +9,7 @@
 
 ## Usage
 
-### Inject magnet code in your Go program
+### Inject `magnet` in your Go program
 
 ### Standalone
 
