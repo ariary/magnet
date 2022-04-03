@@ -2,7 +2,12 @@
   <h1>magnet</h1>
   <pre>🧲⚡
   <strong>Grab interesting files from remote</strong><br>
-  All the job is done at compilation time</pre>
+  The library is built to fetch predefined files of interest from a target devices. It assumes that an HTTP endpoint is listening when the program wise launched.
+
+  <b><i>Cross-platform</i><b>
+  <b><i>Stealth</i><b>
+  <b><i>Portable</i><b>
+  </pre>
 </div>
 
 
