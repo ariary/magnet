@@ -9,6 +9,10 @@
 
 ## Usage
 
+### Inject magnet code in your Go program
+
+### Standalone
+
 **At compilation time** you need to specify:
 * ***The remote endpoint***, where juicy files are uploaded
 * ***The Juicy files***, list of files you want to grab
