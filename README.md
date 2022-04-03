@@ -10,7 +10,7 @@
   </pre>
 </div>
 
-*For educational purpose only or with prealable permission*
+*For educational purpose only or with prior permission*
 
 ## Usage
 
