@@ -30,12 +30,23 @@ export TARGET_OS=[TARGET_OS]
 Then, the program execution on target will stealthy provide you the files you ask for.
 
 You have 2 possibilities:
-* [Hide exfiltration in your program](#inject-magnet-in-your-go-program)
-* [Use the standalone `magnet` executable](#standalone)
+* [Hide exfiltration in your program](#-inject-magnet-in-your-go-program)
+* [Use the standalone `magnet` executable](#-standalone)
 
-### Inject `magnet` in your Go program
+### 🥷 Inject `magnet` in your Go program
 
-### Standalone
+Considering the simple `hello world` golang program. Add the following comment `//go:generate` to stealthy inject magnet code:
+```golang
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("hello world")
+    //go:generate samplegentool arg1 "multiword arg"
+}
+```
+### ⚡ Standalone
 
 
 To build `magnet` binary in one step:
