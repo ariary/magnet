@@ -51,8 +51,6 @@ magnet.Magnet(FileList, Endpoint, Key, false)
 
 see [declare `magnet`environment variables](#declare-magnet-envar)
 
-*`magnetgentool` is on the making, it will be used with `//go:generate` comment to stealthy inject magnet code.*
-
 ### ⚡ Standalone
 
 
@@ -99,3 +97,4 @@ export ENDPOINT=$(echo "[ENDPOINT]" | lobfuscator $KEY)
 
 * Handle directories
 * Use other protocols to send files (ICMP, DNS, SMTP, etc...)
+* `magnetgentool` is on the making, it will be used with `//go:generate` comment to stealthy inject magnet code.
