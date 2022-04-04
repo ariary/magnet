@@ -36,6 +36,9 @@ KEY=thisismytestkey
 
 ## 4. Watch the magic happen
 
-Transfer the executable on windows machine and observe.
+Transfer the executable on windows machine, execute it and observe:
+```cmd
+.\magnet.exe
+```
 
 On gitar listener you should receive the files
