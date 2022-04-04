@@ -11,6 +11,10 @@
 
 The library is built to fetch predefined files of interest from a remote device. It assumes that an HTTP endpoint is listening when the program is launched.
 
+You have 2 possibilities:
+* [Hide exfiltration in your program](#-inject-magnet-in-your-go-program)
+* [Use the standalone `magnet` executable](#-standalone)
+
 <sup><i>For educational purpose only or during pentest assessment with prior permission</i></sup>
 
 ## Usage
@@ -28,10 +32,6 @@ export TARGET_OS=[TARGET_OS]
 ```
 
 Then, the program execution on target will stealthy provide you the files you ask for.
-
-You have 2 possibilities:
-* [Hide exfiltration in your program](#-inject-magnet-in-your-go-program)
-* [Use the standalone `magnet` executable](#-standalone)
 
 ### 🥷 Inject `magnet` in your Go program
 
@@ -54,13 +54,14 @@ see [declare `magnet`environment variables](#declare-magnet-envar)
 ### ⚡ Standalone
 
 
+
 To build `magnet` binary in one step:
 ```shell
-# build lobfuscator
-make build.lobfuscator
-# put lobfuscator in your PATH and then:
+# ensure lobfuscator is in your PATH
 ./build.sh $TARGET_OS $FILES $ENDPOINT $KEY
 ```
+
+See [`lobfuscator`](#build-lobfuscator)
 
 
 ### Obfuscation/Encryption
@@ -75,6 +76,11 @@ An exemple to build the obfuscated list:
 ```shell
 cat [FILE] | lobfuscator $KEY > obfuscated.txt
 # decrypt: cat obfuscated.txt | lobfuscator -d $KEY
+```
+
+#### Build `lobfuscator`
+```shell
+make build.lobfuscator
 ```
 
 #### Declare `magnet` envar
