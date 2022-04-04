@@ -1,29 +1,35 @@
 <div align=center>
   <h1>magnet</h1>
   <pre>🧲⚡
-  <strong>Grab interesting files from target</strong><br>
-  The library is built to fetch predefined files of interest from a remote device. It assumes that an HTTP endpoint is listening when the program wise launched.
+  Grab interesting files from target</strong><br>
 
   <b><i>Cross-platform</i></b>
   <b><i>Stealth</i></b>
-  <b><i>Portable</i></b>
+  <b><i>Portable</i></b>  
   </pre>
 </div>
 
-*For educational purpose only or with prior permission*
+The library is built to fetch predefined files of interest from a remote device. It assumes that an HTTP endpoint is listening when the program is launched.
+
+<sup><i>For educational purpose only or during pentest assessment with prior permission</i></sup>
 
 ## Usage
+
+All the work is made **At compilation time**, you need to specify:
+* ***The remote endpoint***, where juicy files are uploaded
+* ***The Juicy files***, list of files you want to grab
+* ***The target os***, to fit the target (between: `windows`, `darwin`, `linux`)
+
+You have 2 possibilities:
+* [Hide exfiltration in your program](#inject-magnet-in-your-go-program)
+* [Use the standalone `magnet` executable](#standalone)
 
 ### Inject `magnet` in your Go program
 
 ### Standalone
 
-**At compilation time** you need to specify:
-* ***The remote endpoint***, where juicy files are uploaded
-* ***The Juicy files***, list of files you want to grab
-* ***The target os***, to fit the target (between: `windows`, `darwin`, `linux`)
 
-### Shorcut
+#### Shorcut
 
 
 
@@ -38,7 +44,7 @@ Then on target machine:
 ./magnet #or magnet.exe
 ```
 
-### Compile on your own
+#### Compile on your own
 
 The compilation line looks like this:
 ```shell
@@ -59,15 +65,14 @@ To build the obfuscated list:
 cat [FILE] | lobfuscator $KEY > obfuscated.txt
 ```
 
-### Notes
+## Notes
 
 * For the remote endpoint , I suggest you to use the `/push` endpoint of a [`gitar`](https://github.com/ariary/gitar) listener
 * The software is built to be stealthy hence:
   * error handling is not verbose (hidden flag to get more verbosity `-thisisdebug`)
   * I suggest to overwrite usage string in `magnet.go` to fit your attack scenario
-  * rename `magnet` executable
 
 ## To do
 
-* Include a fake payload that will also be run to fake an attacking scenario (example update, etc)
 * Handle directories
+* Use others protocol to send files (ICMP, DNS, SMTP, etc...)
