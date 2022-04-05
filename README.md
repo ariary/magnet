@@ -29,7 +29,7 @@ All the work is made **At compilation time**, you need to specify:
 ```shell
 export KEY=[YOUR_KEY]
 export FILES=[FILENAME]
-export ENDPOINT[ATTACKER_ENDPOINT]
+export ENDPOINT=[ATTACKER_ENDPOINT]
 export TARGET_OS=[TARGET_OS]
 ```
 
@@ -85,7 +85,7 @@ make build.lobfuscator
 
 #### Declare `magnet` envar
 
-Define `FILES` and `ENDPOINTS`envar:
+Define `FILES` and `ENDPOINT` envar:
 ```shell
 export FILES=$(cat [FILE] | lobfuscator $KEY)
 export ENDPOINT=$(echo "[ENDPOINT]" | lobfuscator $KEY)
