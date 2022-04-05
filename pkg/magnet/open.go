@@ -1,5 +1,0 @@
-package magnet
-
-func Open() {
-	//
-}

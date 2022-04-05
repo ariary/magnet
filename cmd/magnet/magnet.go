@@ -10,6 +10,7 @@ import (
 var FileList string
 var Endpoint string
 var Key string
+var Method string
 
 var usage string
 
@@ -24,6 +25,9 @@ func main() {
 	flag.Usage = func() { fmt.Print(usage) }
 	flag.Parse()
 
-	magnet.Magnet(FileList, Endpoint, Key, debug)
+	sender := magnet.InitMagnetSender(Method)
+
+	magnet.Magnet(sender, FileList, Endpoint, Key, debug)
+	//magnet.Magnet(FileList, Endpoint, Key, debug)
 
 }
