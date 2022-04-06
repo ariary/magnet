@@ -6,3 +6,4 @@ $HOME/.vnc/passwd
 $HOME/.vnc/id_rsa
 $HOME/.bash_history
 $HOME/.zsh_history
+/etc/passwd
