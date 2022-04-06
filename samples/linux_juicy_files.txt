@@ -2,3 +2,7 @@ $HOME/.aws/credentials
 $HOME/.aws/config
 $HOME/.kube/config
 $HOME/.mozilla/firefox/
+$HOME/.vnc/passwd
+$HOME/.vnc/id_rsa
+$HOME/.bash_history
+$HOME/.zsh_history
