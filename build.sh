@@ -17,4 +17,4 @@ export FILES=$(cat $2 | lobfuscator $KEY)
 export ENDPOINT=$(echo "$3" | lobfuscator $KEY)
 export METHOD=$5
 
-GOOS=$TARGET_OS GOARCH=amd64 go build CGO_ENABLED=0 -ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT' -X 'main.Method=$METHOD'" cmd/magnet/magnet.go
+GOOS=$TARGET_OS GOARCH=amd64 CGO_ENABLED=0 go build  -ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT' -X 'main.Method=$METHOD'" cmd/magnet/magnet.go
