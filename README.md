@@ -49,7 +49,7 @@ var FileList,Key,Endpoint,Method string
 	magnet.Magnet(sender, FileList, Endpoint, Key, debug)
 ```
 
-3. Finally, modify the build command by adding `-ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT' -X 'main.Method=$METHOD'"`
+3. Finally, modify the build command by adding `CGO_ENABLED=0 -ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT' -X 'main.Method=$METHOD'"`
 
 see [declare `magnet`environment variables](#declare-magnet-envar)
 
