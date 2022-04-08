@@ -4,3 +4,4 @@ $USERPROFILE\.aws\config
 $USERPROFILE\.aws\credentials
 $USERPROFILE\.ssh\id_rsa
 $USERPROFILE\.ssh\id_rsa.pub
+$APPDATA\Mozilla\Firefox\Profiles\
