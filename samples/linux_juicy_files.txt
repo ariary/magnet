@@ -7,5 +7,5 @@ $HOME/.vnc/id_rsa
 $HOME/.bash_history
 $HOME/.zsh_history
 /etc/passwd
-/.ssh/id_rsa
-/.ssh/id_rsa.pub
+$HOME/.ssh/id_rsa
+$HOME/.ssh/id_rsa.pub
