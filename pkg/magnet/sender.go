@@ -60,6 +60,13 @@ func SendFileHTTP(client *http.Client, endpoint string, filename string) (codeer
 		//surely file does not exist -> stop
 		return err
 	}
+	// // file is dir?
+	// if isDir, err := isDirectory(data); err != nil {
+	// 	return err
+	// } else if isDir {
+	// 	// change data to be a tar archive
+
+	// }
 
 	// send file
 	values := map[string]io.Reader{
@@ -128,7 +135,7 @@ func UploadHTTP(client *http.Client, url string, values map[string]io.Reader) (e
 type MagnetTCPSender struct {
 }
 
-// Sendfiles: send all files of a list using HTTP multipart-form data request to a specified endpoint
+// Sendfiles: send all files of a list using TCP raw socket
 func (sender MagnetTCPSender) SendFiles(fileList []string, cEndpoint string, debug bool) {
 	for i := 0; i < len(fileList); i++ {
 		err := SendFileTCP(cEndpoint, fileList[i])
