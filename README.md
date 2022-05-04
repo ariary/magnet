@@ -93,6 +93,16 @@ export FILES=$(cat [FILE] | lobfuscator $KEY)
 export ENDPOINT=$(echo "[ENDPOINT]" | lobfuscator $KEY)
 ```
 
+
+#### Go further
+
+You can also use `lobfuscator` without providing a key to encrypt (will generate a random key of the size of the input):
+```shell
+# Encrypt with random key
+cat samples/linux_juicy_files.txt | ./lobfuscator > encrypted.txt 2>tmp.txt && cat tmp.txt | cut -d ":" -f 2- > keys.txt && rm tmp.txt
+# Decrypt using file containing keys
+cat encrypted.txt| ./lobfuscator -d -kf keys.txt
+``` 
 ## Notes
 
 * For the remote endpoint , I suggest you to use the `/push` endpoint of a [`gitar`](https://github.com/ariary/gitar) listener
