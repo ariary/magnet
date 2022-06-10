@@ -32,6 +32,7 @@ export METHOD=http
 
 ### 3. Build malicious executable
 ```shell
+ go mod tidy
 ./build.sh $TARGET_OS $FILES $ENDPOINT $KEY $METHOD
 #build magnet.exe
 ```
