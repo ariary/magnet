@@ -16,9 +16,9 @@ Our target run a windows device
 Using 
 ```shell
 ## Launch HTTP Upload server
-gitar -e 127.0.0.1
+gitar
 ## Expose the server using
-ngrok http 9237 #copy ngrok endpoint
+ngrok http 9292 #copy ngrok endpoint
 ```
 
 ### 2. Set environment variables
