@@ -39,10 +39,8 @@ func UnfreezeList(files string, key string, debug bool) (fileList []string) {
 		fmt.Println("files:")
 	}
 	for i := 0; i < len(encFileList); i++ {
-		filename, err := encryption.Decode(encFileList[i])
-		if err != nil && debug {
-			fmt.Println(err)
-		}
+		filename := encryption.Decode(encFileList[i])
+
 		fileList[i] = encryption.Xor(string(filename), key)
 		if debug {
 			fmt.Println(fileList[i])
@@ -53,10 +51,7 @@ func UnfreezeList(files string, key string, debug bool) (fileList []string) {
 
 // UnfreezeEndpoint: Decrypt endpoint with xor function
 func UnfreezeEndpoint(endpoint string, key string, debug bool) (cEndpoint string) {
-	decEndpoint, err := encryption.Decode(endpoint)
-	if err != nil && debug {
-		fmt.Println(err)
-	}
+	decEndpoint := encryption.Decode(endpoint)
 	cEndpoint = encryption.Xor(string(decEndpoint), key)
 	if debug {
 		fmt.Println("endpoint:", cEndpoint)
