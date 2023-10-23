@@ -30,7 +30,6 @@ All the work is made **At compilation time**, you need to specify:
 export KEY=[YOUR_KEY]
 export FILES=[FILENAME]
 export ENDPOINT=[ATTACKER_ENDPOINT]
-export TARGET_OS=[TARGET_OS]
 export METHOD=[EXFILTRATION_METHOD]
 ```
 
@@ -60,7 +59,7 @@ see [declare `magnet`environment variables](#declare-magnet-envar)
 To build `magnet` binary in one step:
 ```shell
 # ensure lobfuscator is in your PATH
-./build.sh $TARGET_OS $FILES $ENDPOINT $KEY $METHOD
+./build.sh $FILES $ENDPOINT $KEY $METHOD
 ```
 
 See [`lobfuscator`](#build-lobfuscator) and [full example](https://github.com/ariary/magnet/blob/main/examples/EXAMPLES.md)

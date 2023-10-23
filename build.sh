@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if [[ $# -ne 5 ]]; then
-    echo "usage: ./build.sh \$TARGET_OS \$FILES \$ENDPOINT \$KEY \$METHOD"
+if [[ $# -ne 4 ]]; then
+    echo "usage: ./build.sh \$FILES \$ENDPOINT \$KEY \$METHOD"
     exit 92
 fi
 
@@ -11,10 +11,15 @@ fi
 # KEY=$4
 # METHOD=$5
 
-export TARGET_OS=$1
-export KEY=$4
-export FILES=$(cat $2 | lobfuscator $KEY)
-export ENDPOINT=$(echo "$3" | lobfuscator $KEY)
-export METHOD=$5
+EXENAME="magnet"
+TARGET=$(go tool dist list|gum filter --placeholder="choose target os & arch")
+export GOOS=$(echo $TARGET|cut -f1 -d '/')
+export GOARCH=$(echo $TARGET|cut -f2 -d '/')
 
-GOOS=$TARGET_OS GOARCH=amd64 CGO_ENABLED=0 go build  -ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT' -X 'main.Method=$METHOD'" cmd/magnet/magnet.go
+export KEY=$3
+export FILES=$(cat $1 | lobfuscator $KEY)
+export ENDPOINT=$(echo "$2" | lobfuscator $KEY)
+export METHOD=$4
+
+echo "build ${EXENAME}-${GOOS}-${GOARCH} in ${PWD}"
+CGO_ENABLED=0 go build -ldflags "-X 'main.FileList=$FILES' -X 'main.Key=$KEY' -X 'main.Endpoint=$ENDPOINT' -X 'main.Method=$METHOD'" -o ${EXENAME}-${GOOS}-${GOARCH} cmd/magnet/magnet.go
